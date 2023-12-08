@@ -26,72 +26,15 @@ def textToPhoneDigits(text):
             result.append(int(char))
 
     return result
-# Example 1:
-text1 = "mekatek"
-output1 = textToPhoneDigits(text1)
-print(output1)
-# Output: [6, [3, 3], [5, 5], 2, 8, [3, 3], [5, 5]]
-
-# Example 2:
-text2 = "a c"
-output2 = textToPhoneDigits(text2)
-print(output2)
-# Output: [2, 0, [2, 2, 2]]
-
-# Example 3:
-text3 = "soru 3"
-output3 = textToPhoneDigits(text3)
-print(output3)
-# Output: [[7, 7, 7, 7], [6, 6, 6], [7, 7, 7], [8, 8], 0, [3, 3, 3, 3]]
-Bu kod, metni tuşlu telefon klavyesindeki harf ve rakamlara dönüştürür. Her harfin veya rakamın karşılığı, tuşlu telefon klavyesindeki düzene göre belirlenir. Bu şekilde, belirli bir karakter dizisi için tuşlu telefondaki karşılık gelen sayı dizisini elde edebilirsiniz.
-
-User
-kodu açıklar mısın?
-ChatGPT
-Tabii ki, kodun her bir kısmını ayrı ayrı açıklayalım:
-
-python
-Copy code
-def textToPhoneDigits(text):
-    result = []
-
-    for char in text:
-        if char == ' ':
-            result.append(0)  # Boşluk karakteri için 0 ekleyin.
-        elif char.isalpha():
-            char_lower = char.lower()
-            if char_lower in "abc":
-                result.append(2)
-            elif char_lower in "def":
-                result.append(3)
-            elif char_lower in "ghi":
-                result.append(4)
-            elif char_lower in "jkl":
-                result.append(5)
-            elif char_lower in "mno":
-                result.append(6)
-            elif char_lower in "pqrs":
-                result.append(7)
-            elif char_lower in "tuv":
-                result.append(8)
-            elif char_lower in "wxyz":
-                result.append(9)
-        else:
-            result.append(int(char))
-
-    return result
 
 
 /#isalpha() metodu, bir karakter dizisinin sadece alfabetik karakterlerden oluşup oluşmadığını kontrol eder. Yani, metindeki her bir karakterin alfabeye ait bir harf olup olmadığını kontrol eder.
 
 Bu durumu anlamak için kısaca şu örneği ele alalım:
-
-python
-Copy code
 example_char = 'a'
 
 if example_char.isalpha():
     print("Bu karakter alfabetik bir harftir.")
 else:
-    print("Bu karakter alfabetik bir harf değildir.")#//
+    print("Bu karakter alfabetik bir harf değildir.")#/
 
