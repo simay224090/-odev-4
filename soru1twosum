@@ -1,0 +1,11 @@
+def twoSum(nums, hedef):
+    sozluk = {}
+    for i, num in enumerate(nums):
+        hedefsayi=hedef-num
+        if hedefsayi in sozluk:
+            return [sozluk[hedefsayi],i]
+        sozluk[num]=i
+    return []
+result=twoSum([3,7,8,9,5],11)
+print(result)
+
