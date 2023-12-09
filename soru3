@@ -7,25 +7,26 @@ def textToPhoneDigits(text):
         elif char.isalpha():
             char_lower = char.lower()
             if char_lower in "abc":
-                result.append(2)
+                result.append([2])
             elif char_lower in "def":
-                result.append(3)
+                result.append([3])
             elif char_lower in "ghi":
-                result.append(4)
+                result.append([4])
             elif char_lower in "jkl":
-                result.append(5)
+                result.append([5])
             elif char_lower in "mno":
-                result.append(6)
+                result.append([6])
             elif char_lower in "pqrs":
-                result.append(7)
+                result.append([7])
             elif char_lower in "tuv":
-                result.append(8)
+                result.append([8])
             elif char_lower in "wxyz":
-                result.append(9)
+                result.append([9])
         else:
             result.append(int(char))
 
     return result
+
 
 
 /#isalpha() metodu, bir karakter dizisinin sadece alfabetik karakterlerden oluşup oluşmadığını kontrol eder. Yani, metindeki her bir karakterin alfabeye ait bir harf olup olmadığını kontrol eder.
@@ -37,4 +38,15 @@ if example_char.isalpha():
     print("Bu karakter alfabetik bir harftir.")
 else:
     print("Bu karakter alfabetik bir harf değildir.")#/
+
+
+KODUMUZUN AÇIKLAMASI:
+textToPhoneDigits adında bir fonksiyon tanımlanmıştır. Bu fonksiyon, bir metni alır ve bu metni telefon tuş takımındaki rakamlara dönüştürerek bir liste olarak döndürür.
+result adında bir boş liste oluşturulmuştur. Bu liste, dönüştürülmüş rakam ve harf kombinasyonlarını içerecektir.
+for döngüsü, gelen metindeki her bir karakteri tek tek ele alır.
+if char == ' ': ifadesi, eğer karakter bir boşluk ise, result listesine 0 eklenir. Bu, boşluk karakterinin telefon tuş takımındaki 0 tuşuna karşılık geldiğini belirtir.
+elif char.isalpha(): ifadesi, eğer karakter bir harf ise, harfin küçük harfe çevrilmiş versiyonu char_lower adında bir değişkene atanır.
+Ardından, her bir harf için uygun telefon tuş takımı rakamını result listesine ekler. Örneğin, 'a', 'b', 'c' harfleri için 2 rakamını, 'd', 'e', 'f' harfleri için 3 rakamını ekler.
+Eğer karakter bir sayı ise, karakter doğrudan int tipine çevrilir ve result listesine eklenir.
+Fonksiyon, döngü bittikten sonra result listesini döndürür.
 
